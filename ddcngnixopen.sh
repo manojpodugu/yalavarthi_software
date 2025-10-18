@@ -1,7 +1,7 @@
 #!/bin/bash
 # ==============================================
 #  EC2 Ubuntu Setup Script
-#  Installs: Docker, Docker Compose, Nginx, OpenSSL
+#  Installs: Docker, Docker Compose, Nginx, OpenSSL, postsql
 #  Shows: Disk partitions and available storage
 # ==============================================
 
@@ -64,6 +64,8 @@ psql --version
 echo "⚙️ Setting PostgreSQL 'postgres' user password..."
 sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgresql';"
 
+#Login to PostgreSQL shell:
+#sudo -u postgres psql
 # ------------------------------
 # STEP 7: Show Disk Usage & Partition Info
 # ------------------------------
