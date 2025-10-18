@@ -51,9 +51,21 @@ echo "🔐 Installing OpenSSL..."
 sudo apt install openssl -y
 echo "✅ OpenSSL installed successfully!"
 openssl version
+# ------------------------------
+# STEP 6: Install PostgreSQL
+# ------------------------------
+echo "🐘 Installing PostgreSQL..."
+sudo apt install postgresql postgresql-contrib -y
+sudo systemctl enable postgresql
+sudo systemctl start postgresql
+psql --version
+
+# Set password for default postgres user
+echo "⚙️ Setting PostgreSQL 'postgres' user password..."
+sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgresql';"
 
 # ------------------------------
-# STEP 6: Show Disk Usage & Partition Info
+# STEP 7: Show Disk Usage & Partition Info
 # ------------------------------
 echo "💽 Checking available storage and partitions..."
 
