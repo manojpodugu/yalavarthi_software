@@ -74,3 +74,10 @@ echo "💽 Checking available storage and partitions..."
 # 'df -h' shows disk usage in human readable format (G = GB)
 df -Th
 
+
+docker --version
+docker-compose --version
+nginx -v
+openssl version
+psql --version
+
